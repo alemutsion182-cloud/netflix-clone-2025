@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./row.css";
 import axios from "../../../utils/axios";
 import movieTrailer from "movie-trailer";
@@ -13,9 +13,8 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
   useEffect(() => {
     (async () => {
       try {
-      
         const request = await axios.get(fetchUrl);
-        
+
         setMovie(request.data.results);
       } catch (error) {
         console.log("error", error);
